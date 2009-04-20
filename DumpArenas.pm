@@ -4,8 +4,6 @@ use strict;
 use warnings;
 
 # $ perl ppport.h
-# Scanning ./DumpArenas.xs ...
-# === Analyzing ./DumpArenas.xs ===
 # Uses PL_sv_arenaroot
 # Uses PL_sv_no
 # Uses PL_sv_undef
@@ -24,7 +22,7 @@ use warnings;
 use 5.006_000;
 
 use vars qw( $VERSION );
-$VERSION = '0.07';
+$VERSION = '0.08';
 
 use DynaLoader ();
 sub dl_load_flags { 0x01 }

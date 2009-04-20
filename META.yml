@@ -1,19 +1,27 @@
 --- #YAML:1.0
-name:                Internals-DumpArenas
-version:             0.07
-abstract:            Dump perl memory
-license:             ~
-generated_by:        ExtUtils::MakeMaker version 6.36
-distribution_type:   module
-requires:     
-    Expect:                        0
-    IO::Stty:                      0
-    Moose:                         0
-    parent:                        0
-    Pod::Usage:                    0
-    Sub::Exporter:                 0
-meta-spec:
-    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
-    version: 1.2
+name:               Internals-DumpArenas
+version:            0.08
+abstract:           Dump perl memory
 author:
     - Joshua ben Jore <jjore@cpan.org>
+license:            unknown
+distribution_type:  module
+configure_requires:
+    ExtUtils::MakeMaker:  0
+build_requires:
+    ExtUtils::MakeMaker:  0
+requires:
+    Expect:         0
+    IO::Stty:       0
+    Moose:          0
+    parent:         0
+    Pod::Usage:     0
+    Sub::Exporter:  0
+no_index:
+    directory:
+        - t
+        - inc
+generated_by:       ExtUtils::MakeMaker version 6.50
+meta-spec:
+    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
+    version:  1.4
