@@ -1,13 +1,12 @@
-bin/puke
 Changes
 DumpArenas.xs
-DumpArenas.pm
-DumpArenas.pod
-Makefile.PL
+LICENSE
 MANIFEST
-MANIFEST.SKIP
-META.yml			Module meta-data (added by MakeMaker)
-ppport.h
+META.yml
+Makefile.PL
 README
+dist.ini
+lib/Internals/DumpArenas.pm
+lib/Internals/DumpArenas.pod
+ppport.h
 t/10-use.t
-util/fdclose

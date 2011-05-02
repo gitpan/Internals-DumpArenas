@@ -1,20 +1,49 @@
+
 use strict;
 use warnings;
-use ExtUtils::MakeMaker;
-WriteMakefile(
-	NAME              => 'Internals::DumpArenas',
-    ABSTRACT_FROM     => 'DumpArenas.pod',
-	VERSION_FROM      => 'DumpArenas.pm',
-	AUTHOR            => 'Joshua ben Jore <jjore@cpan.org>',
-	PREREQ_PM => {
-		'Sub::Exporter' => 0,
 
-        # bin/puke
-        'Moose' => 0,
-        'parent' => 0,
-        'Pod::Usage' => 0,
-        'Expect' => 0,
-        'IO::Stty' => 0,
-	},
-    EXE_FILES => [ 'bin/puke' ],
+
+
+use ExtUtils::MakeMaker 6.31;
+
+
+
+my %WriteMakefileArgs = (
+  'ABSTRACT' => 'Dump perl memory',
+  'AUTHOR' => 'Josh Jore <jjore@cpan.org>',
+  'BUILD_REQUIRES' => {},
+  'CONFIGURE_REQUIRES' => {
+    'ExtUtils::MakeMaker' => '6.31'
+  },
+  'DISTNAME' => 'Internals-DumpArenas',
+  'EXE_FILES' => [],
+  'LICENSE' => 'perl',
+  'NAME' => 'Internals::DumpArenas',
+  'PREREQ_PM' => {},
+  'VERSION' => '0.09',
+  'test' => {
+    'TESTS' => 't/*.t'
+  }
 );
+
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
+  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
+  my $pp = $WriteMakefileArgs{PREREQ_PM};
+  for my $mod ( keys %$br ) {
+    if ( exists $pp->{$mod} ) {
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
+    }
+    else {
+      $pp->{$mod} = $br->{$mod};
+    }
+  }
+}
+
+delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
+
+WriteMakefile(%WriteMakefileArgs);
+
+
+
