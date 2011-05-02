@@ -20,7 +20,7 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'perl',
   'NAME' => 'Internals::DumpArenas',
   'PREREQ_PM' => {},
-  'VERSION' => '0.09',
+  'VERSION' => '0.11',
   'test' => {
     'TESTS' => 't/*.t'
   }

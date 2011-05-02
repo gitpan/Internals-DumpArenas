@@ -7,6 +7,5 @@ Makefile.PL
 README
 dist.ini
 lib/Internals/DumpArenas.pm
-lib/Internals/DumpArenas.pod
 ppport.h
 t/10-use.t
